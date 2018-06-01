@@ -5,9 +5,9 @@ This is the first phase of the project, the next big updates would add search an
 _Both iPhone and iPad devices are supported_
 
 ### Screenshots
-![Home Screen](https://i.imgur.com/Lc66i7f.png){:height="50%" width="50%"}
-![Domain Contents](https://i.imgur.com/ful4C9C.png){:height="50%" width="50%"}
-![Settings](https://i.imgur.com/qcZ5X66.png){:height="50%" width="50%"}
+![Home Screen](https://i.imgur.com/Lc66i7f.png)
+![Domain Contents](https://i.imgur.com/ful4C9C.png)
+![Settings](https://i.imgur.com/qcZ5X66.png)
 
 ### Contact
 You can contact me via my personal website at [maysamsh.me](https://maysamsh.me)
