@@ -13,7 +13,7 @@ protocol AWSCredentialCheck{
     func validated(valid: Bool, withCredential: Credential?)
 }
 
-class AWSKeysViewController: UIViewController {
+class AWSKeysViewController: UIViewController, UITextFieldDelegate {
     var delegate: AWSCredentialCheck?
     
     var regions: AWSRegionType?
@@ -106,8 +106,11 @@ class AWSKeysViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         picker.delegate = self
         picker.dataSource = self
+        keyID.delegate = self
+        secretKey.delegate = self
         
         configureActivityIndicator()
     }
@@ -138,7 +141,7 @@ class AWSKeysViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
-
+//MARK: - UIPickerView Delegate
 extension AWSKeysViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -151,5 +154,13 @@ extension AWSKeysViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let regions = AWSRegionType.allRegions()
         return regions[row]
+    }
+}
+
+//MARK: UITextField Delegate
+extension AWSKeysViewController {
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }
