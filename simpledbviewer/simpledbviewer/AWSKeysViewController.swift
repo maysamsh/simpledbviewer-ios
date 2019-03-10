@@ -34,9 +34,9 @@ class AWSKeysViewController: UIViewController, UITextFieldDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     private func configureActivityIndicator(){
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator?.hidesWhenStopped = true
-        activityIndicator?.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator?.style = .whiteLarge
         activityIndicator?.color = UIColor.gray
         activityIndicator?.center = CGPoint(x:UIScreen.main.bounds.size.width / 2, y:UIScreen.main.bounds.size.height / 2)
         self.view.addSubview(activityIndicator!)
@@ -80,9 +80,11 @@ class AWSKeysViewController: UIViewController, UITextFieldDelegate {
                         NotificationHelper.post(withKey: .SetNewCredential)
                     }
                 }
+                
                 DispatchQueue.main.async {
                     self.dismiss(animated: true, completion: nil)
                 }
+                
             }else{
                 var message = error?.localizedDescription ?? "Contact the developer"
                 if (message.containsIgnoringCase(find: "com.amazonaws.AWSServiceErrorDomain")) {
@@ -93,8 +95,8 @@ class AWSKeysViewController: UIViewController, UITextFieldDelegate {
                 }
                 
                 let alertController = UIAlertController(title: "Failed to get domains", message:
-                    message, preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    message, preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
                 DispatchQueue.main.async {
                     self.present(alertController, animated: true, completion: nil)
                 }
@@ -106,12 +108,10 @@ class AWSKeysViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         picker.delegate = self
         picker.dataSource = self
         keyID.delegate = self
         secretKey.delegate = self
-        
         configureActivityIndicator()
     }
     
@@ -125,6 +125,7 @@ class AWSKeysViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

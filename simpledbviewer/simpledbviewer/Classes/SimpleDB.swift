@@ -192,17 +192,60 @@ class SimpleDB {
         
     }
     
+//    func getAttributes(selectExpression:String, completion:@escaping (AWSSimpleDBSelectResult?, Error?)-> Void){
+//        var _nextToken: String? = nil
+//        let selectRequest = AWSSimpleDBSelectRequest()
+//        selectRequest?.selectExpression = selectExpression
+//
+//        selectRequest?.nextToken = _nextToken
+//        if let _selectRequest = selectRequest {
+//            sdb.select(_selectRequest) { (selectResult, error) in
+//                _nextToken = selectResult?.nextToken
+//                completion(selectResult, error)
+//            }
+//        }else{
+//            completion(nil, Failure.invalidRequest)
+//        }
+//    }
+    
     func getAttributes(selectExpression:String, completion:@escaping (AWSSimpleDBSelectResult?, Error?)-> Void){
-        let selectRequest = AWSSimpleDBSelectRequest()
-        selectRequest?.selectExpression = selectExpression
-        if let _selectRequest = selectRequest {
-            sdb.select(_selectRequest) { (selectResult, error) in
-                completion(selectResult, error)
+        DispatchQueue.global().async {
+            var _nextToken: String? = nil
+            var _shouldAskForMore = true
+            var _items = [AWSSimpleDBItem]()
+            let selectRequest = AWSSimpleDBSelectRequest()
+            selectRequest?.selectExpression = selectExpression
+            
+            if let _selectRequest = selectRequest {
+                let semaphore = DispatchSemaphore(value: 0)
+                var __selectResult: AWSSimpleDBSelectResult?
+                var __error: Error?
+                
+                repeat {
+                    selectRequest?.nextToken = _nextToken
+                    self.sdb.select(_selectRequest) { (selectResult, error) in
+                        _nextToken = selectResult?.nextToken
+                        if let __items = selectResult?.items {
+                            _items.append(contentsOf: __items)
+                        }
+                        __selectResult = selectResult
+                        __error = error
+                        semaphore.signal()
+                    }
+                    semaphore.wait()
+                    if _nextToken == nil {
+                        _shouldAskForMore = false
+                        semaphore.signal()
+                    }
+                } while _shouldAskForMore
+                
+                __selectResult?.items = _items
+                completion(__selectResult, __error)
+            }else{
+                completion(nil, Failure.invalidRequest)
             }
-        }else{
-            completion(nil, Failure.invalidRequest)
+            
         }
-        
     }
     
     func listDomains(completion:@escaping (AWSSimpleDBListDomainsResult?, Error?)-> Void){

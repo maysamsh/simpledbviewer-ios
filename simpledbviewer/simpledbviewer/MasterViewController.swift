@@ -93,9 +93,9 @@ class MasterViewController: UITableViewController {
     }
     
     private func configureActivityIndicator(){
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator?.hidesWhenStopped = true
-        activityIndicator?.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator?.style = .whiteLarge
         activityIndicator?.color = UIColor.gray
         activityIndicator?.center = CGPoint(x:UIScreen.main.bounds.size.width / 2, y:UIScreen.main.bounds.size.height / 2)
         self.view.addSubview(activityIndicator!)

@@ -33,6 +33,7 @@ class SettingsTableViewController: UITableViewController {
 
     private func configureUI(){
         self.navigationItem.title = "Settings"
+        self.tableView.tableFooterView = UIView()
     }
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -25,7 +25,7 @@ class SimpleDBTableViewCell: UITableViewCell {
         fatalError("init(coder:)")
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         let labelHeight: CGFloat = 30
         itemName = UILabel(frame: CGRect.zero)
@@ -59,9 +59,9 @@ class SimpleDBTableViewCell: UITableViewCell {
 
         self.itemName.text = "Item #\(numberOfRow): \(items.name ?? "")"
         if let attributes = items.attributes {
-            let boldText = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .title3),
-                            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleThick.rawValue] as [NSAttributedStringKey : Any]
-            let regularText = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .body)]
+            let boldText = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title3),
+                            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue] as [NSAttributedString.Key : Any]
+            let regularText = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
             let attributedText = NSMutableAttributedString()
             
             for attribute in attributes {

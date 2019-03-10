@@ -25,13 +25,9 @@ class DetailViewController: UIViewController {
         return true
     }
     
-    var domain: String? {
-        didSet {
-            configureView()
-        }
-    }
+    var domain: String?
     
-    private  var selectedText = "xxxx"
+    private var selectedText = "xxxx"
     
     func configureView() {
         self.navigationItem.title = "Loading..."
@@ -82,9 +78,9 @@ class DetailViewController: UIViewController {
     }
     
     private func configureActivityIndicator(){
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator?.hidesWhenStopped = true
-        activityIndicator?.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator?.style = .whiteLarge
         activityIndicator?.color = UIColor.gray
         activityIndicator?.center = self.tableView.center
         self.view.addSubview(activityIndicator!)
@@ -93,7 +89,7 @@ class DetailViewController: UIViewController {
     private func stopActivityIndicatior(){
         DispatchQueue.main.async {
             self.activityIndicator?.stopAnimating()
-            self.view.bringSubview(toFront: self.tableView)
+            self.view.bringSubviewToFront(self.tableView)
         }
     }
     
@@ -176,7 +172,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     @objc func displayMenu(gesture: UILongPressGestureRecognizer)
     {
-        if gesture.state == UIGestureRecognizerState.began {
+        if gesture.state == UIGestureRecognizer.State.began {
             self.becomeFirstResponder()
             let menu = UIMenuController.shared
             let position = gesture.location(ofTouch: 0, in: self.tableView)
