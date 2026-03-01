@@ -244,27 +244,3 @@ extension MasterViewController: AWSCredentialCheck {
         }
     }
 }
-
-
-extension UIApplication {
-    var statusBarView: UIView? {
-        return value(forKey: "statusBar") as? UIView
-    }
-    
-    func changeStatusBar(alpha: CGFloat) {
-        statusBarView?.alpha = alpha
-    }
-    
-    func hideStatusBar() {
-        UIView.animate(withDuration: 0.4) {
-            self.statusBarView?.alpha = 0
-        }
-    }
-    
-    func showStatusBar() {
-        UIView.animate(withDuration: 0.4) {
-            self.statusBarView?.alpha = 1
-        }
-    }
-}
-

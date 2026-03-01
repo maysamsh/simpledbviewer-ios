@@ -12,7 +12,8 @@ import AWSCore
 extension AWSRegionType {
     static func allRegions() -> [String] {
         return  [
-        "us-east-1"
+        "us-east-1",
+        "us-east-2"
         , "us-west-1"
         , "us-west-2"
         , "eu-west-1"
@@ -34,6 +35,7 @@ extension AWSRegionType {
     static func regionTypeForString(regionString: String) -> AWSRegionType {
         switch regionString {
         case "us-east-1": return .USEast1
+        case "us-east-2": return .USEast2
         case "us-west-1": return .USWest1
         case "us-west-2": return .USWest2
         case "eu-west-1": return .EUWest1
@@ -56,6 +58,7 @@ extension AWSRegionType {
     var stringValue: String {
         switch self {
         case .USEast1: return "us-east-1"
+        case .USEast2: return "us-east-2"
         case .USWest1: return "us-west-1"
         case .USWest2: return "us-west-2"
         case .EUWest1: return "eu-west-1"

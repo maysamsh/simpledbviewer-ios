@@ -117,13 +117,11 @@ class AWSKeysViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.shared.changeStatusBar(alpha: 0)
         
         self.statusBarShouldBeHidden = true
         UIView.animate(withDuration: 0.5) {
             self.setNeedsStatusBarAppearanceUpdate()
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
