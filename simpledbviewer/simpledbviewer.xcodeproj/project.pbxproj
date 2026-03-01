@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7D04909E20B2FE9100222E16 /* SimpleDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D04909D20B2FE9100222E16 /* SimpleDB.swift */; };
 		7D0490A120B2FEE200222E16 /* Error+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0490A020B2FEE200222E16 /* Error+Ext.swift */; };
 		7D0490A320B3177900222E16 /* SimpleDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0490A220B3177900222E16 /* SimpleDBHelper.swift */; };
+		7D1696E92F54FA8100F7AF8F /* AWSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7D1696E82F54FA8100F7AF8F /* AWSCore */; };
+		7D1696EB2F54FA8100F7AF8F /* AWSSimpleDB in Frameworks */ = {isa = PBXBuildFile; productRef = 7D1696EA2F54FA8100F7AF8F /* AWSSimpleDB */; };
 		7D2BEF5420BD479100D73D71 /* AWSKeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BEF5320BD479100D73D71 /* AWSKeysViewController.swift */; };
 		7D2BEF5620BD4D5200D73D71 /* AWSRegionTypeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BEF5520BD4D5200D73D71 /* AWSRegionTypeHelpers.swift */; };
 		7D36BBC720BABDD7003B84D1 /* SimpleDBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D36BBC620BABDD7003B84D1 /* SimpleDBTableViewCell.swift */; };
@@ -25,29 +27,10 @@
 		7DB6D76220B2A39600704403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB6D76020B2A39600704403 /* Main.storyboard */; };
 		7DB6D76420B2A39C00704403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB6D76320B2A39C00704403 /* Assets.xcassets */; };
 		7DB6D76720B2A39C00704403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB6D76520B2A39C00704403 /* LaunchScreen.storyboard */; };
-		7DB6D78D20B2AD5700704403 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB6D78C20B2AD5700704403 /* AWSCore.framework */; };
-		7DB6D78E20B2AD5700704403 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB6D78C20B2AD5700704403 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DB6D79220B2AD8500704403 /* AWSSimpleDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB6D79120B2AD8500704403 /* AWSSimpleDB.framework */; };
-		7DB6D79320B2AD8500704403 /* AWSSimpleDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB6D79120B2AD8500704403 /* AWSSimpleDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DB6D79520B2B51400704403 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB6D79420B2B51400704403 /* SplitViewController.swift */; };
 		7DBBDB4120BEE3E4000F7FAF /* AWSAccessInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBDB3F20BEE3E4000F7FAF /* AWSAccessInfo+CoreDataClass.swift */; };
 		7DBBDB4220BEE3E4000F7FAF /* AWSAccessInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBDB4020BEE3E4000F7FAF /* AWSAccessInfo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7DB6D78F20B2AD5700704403 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7DB6D79320B2AD8500704403 /* AWSSimpleDB.framework in Embed Frameworks */,
-				7DB6D78E20B2AD5700704403 /* AWSCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D04909D20B2FE9100222E16 /* SimpleDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleDB.swift; sourceTree = "<group>"; };
@@ -70,8 +53,6 @@
 		7DB6D76320B2A39C00704403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB6D76620B2A39C00704403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB6D76820B2A39C00704403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DB6D78C20B2AD5700704403 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
-		7DB6D79120B2AD8500704403 /* AWSSimpleDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSSimpleDB.framework; sourceTree = "<group>"; };
 		7DB6D79420B2B51400704403 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		7DBBDB3F20BEE3E4000F7FAF /* AWSAccessInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSAccessInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7DBBDB4020BEE3E4000F7FAF /* AWSAccessInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSAccessInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -82,8 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DB6D79220B2AD8500704403 /* AWSSimpleDB.framework in Frameworks */,
-				7DB6D78D20B2AD5700704403 /* AWSCore.framework in Frameworks */,
+				7D1696EB2F54FA8100F7AF8F /* AWSSimpleDB in Frameworks */,
+				7D1696E92F54FA8100F7AF8F /* AWSCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,8 +91,6 @@
 		7DB6D74B20B2A39600704403 = {
 			isa = PBXGroup;
 			children = (
-				7DB6D79120B2AD8500704403 /* AWSSimpleDB.framework */,
-				7DB6D78C20B2AD5700704403 /* AWSCore.framework */,
 				7DB6D75620B2A39600704403 /* simpledbviewer */,
 				7DB6D75520B2A39600704403 /* Products */,
 			);
@@ -155,7 +134,6 @@
 				7DB6D75020B2A39600704403 /* Sources */,
 				7DB6D75120B2A39600704403 /* Frameworks */,
 				7DB6D75220B2A39600704403 /* Resources */,
-				7DB6D78F20B2AD5700704403 /* Embed Frameworks */,
 				7DB6D79020B2AD5D00704403 /* ShellScript */,
 			);
 			buildRules = (
@@ -192,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 7DB6D74B20B2A39600704403;
+			packageReferences = (
+				7D1696E72F54FA8100F7AF8F /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */,
+			);
 			productRefGroup = 7DB6D75520B2A39600704403 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -460,6 +441,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D1696E72F54FA8100F7AF8F /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/aws-sdk-ios-spm";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.41.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D1696E82F54FA8100F7AF8F /* AWSCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D1696E72F54FA8100F7AF8F /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */;
+			productName = AWSCore;
+		};
+		7D1696EA2F54FA8100F7AF8F /* AWSSimpleDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D1696E72F54FA8100F7AF8F /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */;
+			productName = AWSSimpleDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7DB6D75920B2A39600704403 /* simpledbviewer.xcdatamodeld */ = {
