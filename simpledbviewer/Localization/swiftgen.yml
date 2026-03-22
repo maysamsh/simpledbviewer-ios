@@ -1,0 +1,16 @@
+## SwiftGen input is generated from Localizable.xcstrings by a Run Script phase
+## (see Scripts/xcstrings_to_swiftgen_strings.py). Only one locale is parsed here.
+## Run this after maching changes to the string file from the root folder.
+##
+## python3 Scripts/xcstrings_to_swiftgen_strings.py --all-locales simpledbviewer/Localization/Localizable.xcstrings Generated/SwiftGenInput
+##
+
+strings:
+  inputs:
+    - ../../Generated/SwiftGenInput/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: ../Generated/L10n.generated.swift
+      params:
+        enumName: L10n
+        publicAccess: false

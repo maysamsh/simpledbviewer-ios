@@ -1,5 +1,39 @@
-simpledbviewer/.DS_Store
-/simpledbviewer/simpledbviewer.xcodeproj/project.xcworkspace/xcuserdata
-/simpledbviewer/simpledbviewer.xcodeproj/xcuserdata
-simpledbviewer/simpledbviewer/.DS_Store
+# Xcode
+build/
+DerivedData/
+*.xcworkspace
+!default.xcworkspace
+*.xcuserstate
+xcuserdata/
+
+# Swift Package Manager
+.build/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# macOS
 .DS_Store
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+*.env
+
+# Archives
+*.xcarchive
+
+# Temporary files
+*.swp
+*.lock
