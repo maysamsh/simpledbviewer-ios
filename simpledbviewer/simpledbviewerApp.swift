@@ -26,6 +26,7 @@ struct simpledbviewerApp: App {
                     }
             }
             .task { container.performStartup() }
+            .preferredColorScheme(ProcessInfo.processInfo.arguments.contains("-FASTLANE_SNAPSHOT") ? .light : nil)
         }
         .commands {
             CommandGroup(replacing: .newItem) { }

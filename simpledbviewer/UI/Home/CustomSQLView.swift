@@ -48,7 +48,8 @@ struct CustomSQLView: View {
             .accessibilityHint("Runs the custom query")
         }
         .padding(Spacing.lg)
-        .navigationTitle("Custom Query")
+        .accessibilityIdentifier("customSQLQueryScreen")
+        .navigationTitle(L10n.customQuery)
         .toolbarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {

@@ -67,8 +67,9 @@ struct AttributesView: View {
                         .accessibilityHidden(true)
                 }
                 .disabled(!showAttributes)
-                .accessibilityLabel("Custom SQL")
-                .accessibilityHint("Opens the screen to run a custom query")
+                .accessibilityLabel(L10n.customSQL)
+                .accessibilityHint(L10n.opensTheScreenToRunACustomQuery)
+                .accessibilityIdentifier("customSQLToolbarButton")
             }
         }
         .sheet(isPresented: shareSheetIsPresentedBinding) {
