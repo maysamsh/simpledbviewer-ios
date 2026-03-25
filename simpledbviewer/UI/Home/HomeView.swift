@@ -78,7 +78,7 @@ struct HomeView: View {
                         AddAWSSecretsView(viewModel: coordinator.addCredentialsViewModel)
                             .navigationTitle("Add a profile")
                             .toolbarTitleDisplayMode(.inline)
-                            .presentationDetents([.medium])
+                            .presentationDetents([.medium, .large])
                     case .profilesListIsPresented:
                         StoredCredentialsView(viewModel: coordinator.storedListViewModel)
                             .navigationTitle("Select a profile")
