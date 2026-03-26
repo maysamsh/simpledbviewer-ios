@@ -6,6 +6,9 @@ Rewriting this project was an attempt to practice Clean Architecture and Unidire
 
 Requirements: Xcode 16+ and valid AWS credentials (access keys) for testing. You can follow this guide to get your keys [https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
+## Download
+You can download the app from the App Store [https://apps.apple.com/ca/app/simpledb/id1392905407](https://apps.apple.com/ca/app/simpledb/id1392905407)
+
 ## License
 
 This project is licensed under the PolyForm Shield License 1.0.0.
